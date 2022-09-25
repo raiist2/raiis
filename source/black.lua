@@ -11228,7 +11228,7 @@ if not msg.Supcreatorm then
 return send(msg_chat_id,msg_id,'\n*✦ هذا الامر يخص { '..Controller_Num(44)..' }* ',"md",true)  
 end
 local list = Redis:smembers(black..'List:array')
-text = "  ✦ قائمه الردود المتعدده \n•━━━━ black ━━━━━•\n"
+text = "  ✦ قائمه الردود المتعدده \nٴ⩹━━━━✦ 𝐑𝐀𝐈𝐈𝐒 ✦━━━━⩺\n"
 for k,v in pairs(list) do
 text = text..""..k..">> ("..v..") ➢ {رساله}\n"
 end
@@ -11812,7 +11812,7 @@ data = {
 },
 }
 }
-return send(msg_chat_id,msg_id,"[ 𝐑𝐀𝐈𝐈𝐒𒀭⸙ꠋꠋꠋꠋꠋꠋꠋꠋ](tg://user?id=1290321198)","md",true, false, false, true, reply_markup)
+return send(msg_chat_id,msg_id,"[ 𝐑𝐀𝐈𝐈𝐒](tg://user?id=1290321198)","md",true, false, false, true, reply_markup)
 end
 
 if text == "تفعيل صورتي" or text == "تفعيل الصوره" then
@@ -14736,6 +14736,19 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/QQNNSX/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
+if text == "ثنائي اليوم" then
+local Info_Members = bot.searchChatMembers(msg.chat_id, "*", 200)
+local List_Members = Info_Members.members
+local NumRand1 = math.random(1, #List_Members); 
+local NumRand2 = math.random(1, #List_Members); 
+local user1 = List_Members[NumRand1].member_id.user_id
+local user2 = List_Members[NumRand2].member_id.user_id
+local UserInfo = bot.getUser(user1)
+local UserInfoo = bot.getUser(user2)
+local listTow = "• ثنائي اليوم : \n ["..FlterBio(UserInfo.first_name).."](tg://user?id="..UserInfo.id..") ~ ["..UserInfoo.first_name.."](tg://user?id="..UserInfoo.id..")\n"
+return send(msg.chat_id,msg.id,listTow,"md",true)  
+end
+
 if text == "الحاسبه" or text == "اله حاسبه" or text == "الاله الحاسبه" then
 Redis:del(black..msg.sender.user_id..msg.chat_id.."num")
 start_mrkup = LuaTele.replyMarkup{
@@ -15232,9 +15245,9 @@ send(msg.chat_id,msg.id,"• للمبرمج ريس فقط")
 end
 end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
-photo = "https://t.me/photojack14366/58"
+photo = "https://t.me/sertonge/3"
 local T =[[
-Source black
+Welcome to source Raiis
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
